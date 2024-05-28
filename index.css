@@ -1,0 +1,112 @@
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(315deg, #1743bb 0%, #ad40d5 74%);
+}
+.wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+.fullScreen {
+  height: 100%;
+}
+.myText:hover {
+  color: blue;
+}
+#age1label {
+  color: rgb(12, 195, 12);
+}
+#age2label {
+  color: rgb(238, 154, 9);
+}
+#age3label {
+  color: rgb(195, 12, 12);
+}
+.wavyText {
+  position: relative;
+}
+.wavyText span {
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+@keyframes flip {
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
+}
+.question {
+  color: white;
+}
+.fearlabels {
+  color: white;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+.styledButton {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.styledButton:hover,
+.styledButton:focus {
+  background-color: #F082AC;
+}
+.styledFont {
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}

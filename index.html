@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Document</title>
+  </head>
+  <body class="fullScreen">
+    <nav style="background-color: black; position: fixed; top: 0px; width: 100%;">
+      <div class="wavyText">
+        <span style="--i: 1">b</span>
+        <span style="--i: 2">u</span>
+        <span style="--i: 3">n</span>
+        <span style="--i: 4">n</span>
+        <span style="--i: 5">y</span>
+      </div>
+    </nav>
+    <div class="wrapper" style="margin-top: 8vh">
+      <br />
+      <div style="display: inline; height: 30%">
+        <img id="dog" style="height: 40vh" src="bunny.jpeg" />
+        <img id="dog2" style="height: 40vh" src="bunny2.jpeg" />
+        <img id="dog3" style="height: 40vh" src="bunny3.jpeg" />
+      </div>
+      <p class="question; styledFont" style="color: white">
+        How scary is the beast?
+      </p>
+      <input
+        class="radioInput"
+        type="radio"
+        id="fear1"
+        name="fear"
+        value="30"
+      />
+      <label class="fearlabels" id="fearlabel1" for="age1">0 - 3</label><br />
+      <input
+        class="radioInput"
+        type="radio"
+        id="fear2"
+        name="fear"
+        value="60"
+      />
+      <label class="fearlabels" id="fearlabel2" for="age2">4 - 7</label><br />
+      <input
+        class="radioInput"
+        type="radio"
+        id="fear3"
+        name="fear"
+        value="100"
+      />
+      <label class="fearlabels" id="fearlabel3" for="age3">7 - 10</label
+      ><br /><br />
+      <button class="styledButton" type="submit" onclick="submitForm()">
+        Submit
+      </button>
+      <br />
+      <br />
+      <p class="question; styledFont" style="color: white">How cute is bun?</p>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="0"
+        class="slider"
+        id="slider"
+      />
+      <p id="sliderVal" style="color: white; font-size: larger"></p>
+      <button class="styledButton" type="submit" onclick="submitSlider();">
+        Submit
+      </button>
+      <script>
+        var slider = document.getElementById("slider");
+        var output = document.getElementById("sliderVal");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function () {
+          output.innerHTML = this.value;
+        };
+        document.getElementById("dog").addEventListener("click", function () {
+          alert("Whimsical little creature");
+        });
+        const submitSlider = (e) => {
+          var sliderValue = document.getElementById("slider").value;
+          if (sliderValue < 100) {
+            alert("Incorrect value, try harder 😤");
+          } else {
+            alert("yeah baybee🥳");
+          }
+        };
+        const submitForm = (e) => {
+          var ele = document.getElementsByClassName("radioInput");
+          let notClicked = 0;
+          for (i = 0; i < ele.length; i++) {
+            if (ele[i].checked) {
+              if (ele[i].value > 60) {
+                alert("Really scary!! 😰😱");
+              } else if (ele[i].value > 30) {
+                alert("Somewhat spooky! 🎃");
+              } else {
+                alert("Not scary 😮‍💨");
+              }
+            } else {
+              notClicked = notClicked + 1;
+            }
+          }
+          if (notClicked === 3) {
+            alert("pick an option dickhead");
+          }
+        };
+      </script>
+    </div>
+  </body>
+</html>
